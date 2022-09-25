@@ -4,11 +4,21 @@
 # Наприклад (слово - "Python" а номер символу 3) - "The 3 symbol in "Python" is 't' ".
 
 
-
-
-user_word = 'Mouse'
-user_idx = int(input(f'Enter number of symbol in \'{user_word}\':'))
-print(f' The {user_idx} symbol in {user_word} is {user_word[user_idx - 1]}')
+counter = 0
+while True:
+          counter += 1
+          user_word = 'Mouse'
+          try:
+             user_idx = int(input(f'Enter number of symbol in \'{user_word}\':'))
+          except ValueError as e:
+               print('Error! Enter int!')
+          else:
+               if 0 < user_idx <= len(user_word):
+                  print(f' The {user_idx} symbol in {user_word} is {user_word[user_idx - 1]}')
+               else:
+                 print('Error!')
+          if counter > 7:
+              break
 
 
 # 2. Написати цикл, який буде вимагати від користувача ввести слово, в якому є буква "о"
